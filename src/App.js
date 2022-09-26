@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import Input from './components/Input.jsx'
+import Boton from './components/Boton.jsx'
 
 function App() {
+  const [nombre, setNombre] = useState("")
+  const [contraseña, setContraseña] = useState("")
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <Input
+          setNombre ={ setNombre }
+          setContraseña = { setContraseña }>
+        </Input>
+        { nombre && contraseña === "252525" && <Boton></Boton>}
+      </div>
     </div>
   );
 }
